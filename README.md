@@ -15,7 +15,7 @@
 ### Docker and Database
 
 - [x] Create `.env` and `.env.example` files
-- [ ] Create `docker-compose.yml`
+- [x] Create `docker-compose.yml`
 - [ ] Set up database connection
 
 ### Videogames Resource
