@@ -31,8 +31,9 @@ export class VideogamesService {
     }
   }
 
-  findAll() {
-    return `This action returns all videogames`;
+  async findAll() {
+    const videogames = await this.videogameRepository.find();
+    return videogames;
   }
 
   findOne(id: number) {

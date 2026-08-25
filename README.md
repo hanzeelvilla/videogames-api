@@ -30,7 +30,7 @@
 ### Endpoints CRUD
 
 - [x] `POST /videogames` — create
-- [ ] `GET /videogames` — list
+- [x] `GET /videogames` — list
 - [ ] `GET /videogames/:id` — get one
 - [ ] `PATCH /videogames/:id` — update
 - [ ] `DELETE /videogames/:id` — delete
