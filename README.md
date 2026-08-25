@@ -14,7 +14,7 @@
 
 ### Docker and Database
 
-- [ ] Create `.env` and `.env.example` files
+- [x] Create `.env` and `.env.example` files
 - [ ] Create `docker-compose.yml`
 - [ ] Set up database connection
 
