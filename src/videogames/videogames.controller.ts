@@ -37,10 +37,10 @@ export class VideogamesController {
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseUUIDPipe) id: string,
     @Body() updateVideogameDto: UpdateVideogameDto,
   ) {
-    return this.videogamesService.update(+id, updateVideogameDto);
+    return this.videogamesService.update(id, updateVideogameDto);
   }
 
   @Delete(':id')

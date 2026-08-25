@@ -53,8 +53,29 @@ export class VideogamesService {
     return videogame;
   }
 
-  update(id: number, updateVideogameDto: UpdateVideogameDto) {
-    return `This action updates a #${id} videogame`;
+  async update(id: string, updateVideogameDto: UpdateVideogameDto) {
+    const videogame = await this.videogameRepository.preload({
+      id,
+      ...updateVideogameDto,
+    });
+
+    if (!videogame) {
+      throw new BadRequestException(`Videogame with id "${id}" not found`);
+    }
+
+    try {
+      return await this.videogameRepository.save(videogame);
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      if (error.code === '23505') {
+        throw new BadRequestException(
+          'Videogame with this name already exists',
+        );
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      this.logger.error(`Error creating videogame: ${error.message}`);
+    }
   }
 
   async remove(id: string) {
