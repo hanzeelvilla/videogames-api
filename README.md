@@ -25,7 +25,7 @@
 
 ### DTOs and Validation
 
-- [ ] Create `CreateVideogameDto`
+- [x] Create `CreateVideogameDto`
 
 ### Endpoints CRUD
 
