@@ -8,7 +8,7 @@
 
 ### Inital Setup
 
-- [ ] Set global API prefix (`api`)
+- [x] Set global API prefix (`api`)
 - [ ] Configure `@nestjs/config` for environment variables
 - [ ] Configure global `ValidationPipe` (so DTOs validate automatically)
 
