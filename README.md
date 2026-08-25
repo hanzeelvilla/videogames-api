@@ -37,7 +37,7 @@
 
 ### Documentation
 
-- [ ] README documentation
+- [x] README documentation
 
 ### Extra Features
 
@@ -49,6 +49,39 @@
 - [ ] Rate limit
 - [ ] Swagger documentation
 - [ ] Test
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/) v20 o superior
+- [pnpm](https://pnpm.io/) como gestor de paquetes
+- [Docker](https://www.docker.com/) y Docker Compose (para levantar la base de datos)
+
+## Instalación y configuración
+
+1. Clonar el repositorio e instalar dependencias:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Crear el archivo `.env` a partir de `.env.example` y completar los valores:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Variables disponibles:
+
+   - `DB_PORT`: puerto expuesto por la base de datos
+   - `DB_HOST`: host de la base de datos
+   - `DB_NAME`: nombre de la base de datos
+   - `DB_PASSWORD`: contraseña del usuario de Postgres
+
+3. Levantar la base de datos (Postgres) con Docker Compose:
+
+   ```bash
+   docker-compose up -d
+   ```
 
 ## Project setup
 
