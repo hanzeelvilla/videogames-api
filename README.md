@@ -45,6 +45,7 @@
 - [ ] Videogame image
 - [ ] Error handling
 - [ ] pagination
+- [ ] Console relation
 - [ ] Rate limit
 - [ ] Swagger documentation
 - [ ] Test

@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { CreateVideogameDto } from './dto/create-videogame.dto';
 import { UpdateVideogameDto } from './dto/update-videogame.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -19,8 +19,15 @@ export class VideogamesService {
       const videogame = this.videogameRepository.create(createVideogameDto);
       return await this.videogameRepository.save(videogame);
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      if (error.code === '23505') {
+        throw new BadRequestException(
+          'Videogame with this name already exists',
+        );
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       this.logger.error(`Error creating videogame: ${error.message}`);
-      throw error;
     }
   }
 
