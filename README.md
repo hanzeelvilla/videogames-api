@@ -29,8 +29,8 @@
 
 ### Endpoints CRUD
 
-- [ ] `POST /videogames` — create
-- [ ] `GET /videogames` — list (with pagination)
+- [x] `POST /videogames` — create
+- [ ] `GET /videogames` — list
 - [ ] `GET /videogames/:id` — get one
 - [ ] `PATCH /videogames/:id` — update
 - [ ] `DELETE /videogames/:id` — delete
@@ -38,6 +38,16 @@
 ### Documentation
 
 - [ ] README documentation
+
+### Extra Features
+
+- [ ] Param search
+- [ ] Videogame image
+- [ ] Error handling
+- [ ] pagination
+- [ ] Rate limit
+- [ ] Swagger documentation
+- [ ] Test
 
 ## Project setup
 

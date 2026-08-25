@@ -1,4 +1,5 @@
-import { IsDate, IsString, MinLength } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsDate, IsInt, IsString, Max, Min, MinLength } from 'class-validator';
 
 export class CreateVideogameDto {
   @IsString()
@@ -7,9 +8,15 @@ export class CreateVideogameDto {
 
   @IsString()
   @MinLength(3)
-  description?: string;
+  description!: string;
+
+  @IsInt()
+  @Min(0)
+  @Max(5)
+  stars!: number;
 
   @IsDate()
+  @Type(() => Date)
   release_date!: Date;
 
   @IsString()

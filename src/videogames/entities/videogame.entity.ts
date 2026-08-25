@@ -17,10 +17,11 @@ export class Videogame {
   })
   name!: string;
 
-  @Column('text', {
-    nullable: true,
-  })
-  description?: string;
+  @Column('text')
+  description!: string;
+
+  @Column('integer')
+  stars!: number;
 
   @Column('date')
   release_date!: Date;
