@@ -28,9 +28,9 @@ export class VideogamesController {
     return this.videogamesService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.videogamesService.findOne(+id);
+  @Get(':term')
+  findOne(@Param('term') term: string) {
+    return this.videogamesService.findOne(term);
   }
 
   @Patch(':id')

@@ -4,6 +4,7 @@ import { UpdateVideogameDto } from './dto/update-videogame.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Videogame } from './entities/videogame.entity';
 import { Repository } from 'typeorm';
+import { isUUID } from 'class-validator';
 
 @Injectable()
 export class VideogamesService {
@@ -36,8 +37,16 @@ export class VideogamesService {
     return videogames;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} videogame`;
+  async findOne(term: string) {
+    let videogame: Videogame | null;
+
+    if (isUUID(term)) {
+      videogame = await this.videogameRepository.findOneBy({ id: term });
+    } else {
+      videogame = await this.videogameRepository.findOneBy({ name: term });
+    }
+
+    return videogame;
   }
 
   update(id: number, updateVideogameDto: UpdateVideogameDto) {
