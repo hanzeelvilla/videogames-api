@@ -31,9 +31,9 @@
 
 - [x] `POST /videogames` — create
 - [x] `GET /videogames` — list
-- [x] `GET /videogames/:id` — get one
+- [x] `GET /videogames/:term` — get one
 - [ ] `PATCH /videogames/:id` — update
-- [ ] `DELETE /videogames/:id` — delete
+- [x] `DELETE /videogames/:id` — delete
 
 ### Documentation
 

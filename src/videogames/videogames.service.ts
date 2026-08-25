@@ -46,6 +46,10 @@ export class VideogamesService {
       videogame = await this.videogameRepository.findOneBy({ name: term });
     }
 
+    if (!videogame) {
+      throw new BadRequestException(`Videogame with term "${term}" not found`);
+    }
+
     return videogame;
   }
 
@@ -53,7 +57,8 @@ export class VideogamesService {
     return `This action updates a #${id} videogame`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} videogame`;
+  async remove(id: string) {
+    const videogame = await this.findOne(id);
+    await this.videogameRepository.remove(videogame);
   }
 }

@@ -8,6 +8,8 @@ import {
   Delete,
   UseInterceptors,
   ClassSerializerInterceptor,
+  HttpCode,
+  ParseUUIDPipe,
 } from '@nestjs/common';
 import { VideogamesService } from './videogames.service';
 import { CreateVideogameDto } from './dto/create-videogame.dto';
@@ -42,7 +44,8 @@ export class VideogamesController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.videogamesService.remove(+id);
+  @HttpCode(204)
+  remove(@Param('id', ParseUUIDPipe) id: string) {
+    return this.videogamesService.remove(id);
   }
 }
