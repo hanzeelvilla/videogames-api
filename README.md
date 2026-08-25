@@ -20,12 +20,12 @@
 
 ### Videogames Resource
 
-- [ ] Generate Videogames resource
+- [x] Generate Videogames resource
 - [ ] Create Videogame entity
 
 ### DTOs and Validation
 
-- [ ] Create CreateVideogameDto
+- [ ] Create `CreateVideogameDto`
 
 ### Endpoints CRUD
 
