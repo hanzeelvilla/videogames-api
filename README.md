@@ -21,7 +21,7 @@
 ### Videogames Resource
 
 - [x] Generate Videogames resource
-- [ ] Create Videogame entity
+- [x] Create Videogame entity
 
 ### DTOs and Validation
 
